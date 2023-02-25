@@ -34,6 +34,7 @@ public class UserServiceImpl implements UserService {
 		if (user == null) {
 			throw new InvalidCredentialsException("Invalid Username or Password!!!");
 		} else {
+			log.info("Validating Email ID and Password...");
 			if (user.getEmailId().equals(credentials.getEmailId())) {
 				return "Login Successful";
 			}
