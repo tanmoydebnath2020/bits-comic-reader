@@ -29,6 +29,7 @@ public class UserServiceImpl implements UserService {
 	}
 
 	public String login(Credentials credentials) throws InvalidCredentialsException {
+		log.info("Validating Email ID and Password...");
 		User user = userRepository.findByEmailIdAndPassword(credentials.getEmailId(), credentials.getPassword());
 		if (user == null) {
 			throw new InvalidCredentialsException("Invalid Username or Password!!!");
